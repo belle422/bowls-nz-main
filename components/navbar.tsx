@@ -40,7 +40,7 @@ export default function Navbar() {
       title: "Community",
       children: [
         { title: "Volunteers", href: "/community/volunteers" },
-        { title: "Become a Coach", href: "/community/become-coach" },
+        { title: "Become a Coach", href: "/community/become-a-coach" },
         { title: "Stories from the Green", href: "/community/stories" },
         {
           title: "Inclusion & Diversity",
@@ -92,10 +92,10 @@ export default function Navbar() {
         <div className="flex items-start justify-between">
           <div className="flex gap-5 items-center">
             <button onClick={() => setIsOpen(true)} className="text-white">
-              <Menu strokeWidth={1.5} className="h-10 w-10" />
+              <Menu strokeWidth={1} className="h-10 w-10" />
             </button>
             <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
-              <MonitorPlay strokeWidth={1.5} className="h-10 w-10 text-white" />
+              <MonitorPlay strokeWidth={1} className="h-10 w-10 text-white" />
             </Link>
           </div>
           <Link href="/">
@@ -109,17 +109,14 @@ export default function Navbar() {
           </Link>
           <div className="flex gap-5 items-center">
             <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
-              <ShoppingCart
-                strokeWidth={1.5}
-                className="h-10 w-10 text-white"
-              />
+              <ShoppingCart strokeWidth={1} className="h-10 w-10 text-white" />
             </Link>
             <Link
               href="https://www.bowlshub.co.nz/authenticate/login"
               target="_blank"
             >
               <CircleUserRound
-                strokeWidth={1.5}
+                strokeWidth={1}
                 className="h-10 w-10 text-white"
               />
             </Link>
@@ -132,11 +129,11 @@ export default function Navbar() {
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-5">
                 <button onClick={() => setIsOpen(false)} className="text-brown">
-                  <X strokeWidth={1.5} className="h-10 w-10" />
+                  <X strokeWidth={1} className="h-10 w-10" />
                 </button>
                 <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
                   <MonitorPlay
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     className="h-10 w-10 text-brown"
                   />
                 </Link>
@@ -153,7 +150,7 @@ export default function Navbar() {
               <div className="flex gap-5 items-center">
                 <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
                   <ShoppingCart
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     className="h-10 w-10 text-brown"
                   />
                 </Link>
@@ -162,7 +159,7 @@ export default function Navbar() {
                   target="_blank"
                 >
                   <CircleUserRound
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     className="h-10 w-10 text-brown"
                   />
                 </Link>

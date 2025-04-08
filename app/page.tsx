@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import { useState, useCallback } from "react";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import LatestNews from "@/components/LatestNews";
+import FindYourPath from "@/components/FindYourPath";
 
 export default function Home() {
   const router = useRouter();
@@ -127,6 +128,8 @@ export default function Home() {
           </h3>
         </div>
       </div>
+
+      <FindYourPath />
 
       {/* Upcoming Events */}
       <section className="py-16 bg-sage/5">

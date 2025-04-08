@@ -61,19 +61,16 @@ export default function NewsCarousel() {
           </div>
         </div>
         <div className="pl-2.5 pr-5 lg:pl-5 lg:pr-10 w-full ">
-          <div className="lg:p-10 p-5 flex flex-col gap-20">
+          <div className="lg:p-10 p-5 flex flex-col gap-5 lg:gap-20">
             <div className="flex justify-between w-full">
               <p className="subheading">Latest News</p>
               <div className="flex items-center gap-5">
                 <button onClick={prevArticle} className="hover:opacity-90">
-                  <ArrowLeft
-                    strokeWidth={1.5}
-                    className="text-brown h-10 w-10"
-                  />
+                  <ArrowLeft strokeWidth={1} className="text-brown h-10 w-10" />
                 </button>
                 <button onClick={nextArticle} className="hover:opacity-90">
                   <ArrowRight
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     className="text-brown h-10 w-10"
                   />
                 </button>
