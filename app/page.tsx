@@ -5,13 +5,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  ChevronRight,
-  MapPin,
   PlayCircle,
   Award,
   BellIcon as Whistle,
   Users2,
   ShoppingBag,
+  CalendarDays,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -139,7 +138,38 @@ export default function Home() {
       </div>
 
       {/* Upcoming Events */}
-      <section className="py-16 bg-sage/5">
+
+      <div className="bg-white py-5">
+        <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row w-full">
+          <div className="flex pl-5 lg:pl-10 content-center justify-center w-full">
+            <div className="relative">
+              <Image
+                src="/images/events.png"
+                alt="Ponsonby Bowls Score Board "
+                width={600}
+                height={508}
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="pl-2.5 pr-5 lg:pl-5 lg:pr-10 w-full ">
+            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:gap-20">
+              <div className="flex justify-between w-full">
+                <p className="subheading">Upcoming Events</p>
+                <Link href="https://bowlsnewzealand.co.nz/events/">
+                  <CalendarDays
+                    strokeWidth={1}
+                    className="text-brown h-10 w-10"
+                  />
+                </Link>
+              </div>
+              <div className="flex items-start flex-col gap-5 text-brown w-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <section className="py-16 bg-sage/5">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-subsection text-forest uppercase mb-4">
@@ -177,7 +207,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Content */}
       <section className="py-16 bg-white">
