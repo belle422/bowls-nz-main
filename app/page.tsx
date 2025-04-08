@@ -104,19 +104,29 @@ export default function Home() {
         <PartnerCarousel />
       </div>
 
-      {/* Latest News */}
       <LatestNews />
 
-      {/* Green Banner */}
-      <section className="py-12 bg-forest">
-        <div className="container">
-          <p className="text-white italic text-center font-gt-super text-2xl md:text-4xl lg:text-5xl leading-relaxed px-4 md:px-12 max-w-5xl mx-auto">
-            "Rooted in tradition but focused on the future, Bowls New Zealand is
-            championing new ways to play, opening the sport to more people, and
-            celebrating the community at its heart."
-          </p>
+      <div className="flex relative h-[596px] py-20 px-5 lg:px-10 flex-col gap-10 justify-end items-start bg-brown">
+        <div className="absolute inset-0 z-0 bg-blend-darken">
+          <Image
+            src="/images/ponsonby-bowls.png"
+            alt="Lawn bowls on a green with black bowls and white jack"
+            className="object-cover opacity-60"
+            fill
+            priority
+          />
         </div>
-      </section>
+        <div className="z-10 mx-auto max-w-[1440px] space-y-10 w-full">
+          <h3 className="text-white w-[80%] leading-[130%]">
+            <span className="italic">
+              Rooted in tradition but focused on the future, Bowls New Zealand
+              is{" "}
+            </span>
+            championing new ways to play, opening the sport to more people, and
+            celebrating the community at its heart.
+          </h3>
+        </div>
+      </div>
 
       {/* Upcoming Events */}
       <section className="py-16 bg-sage/5">

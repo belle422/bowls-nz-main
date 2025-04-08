@@ -101,10 +101,13 @@ h6 {
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-[36px] tracking-[3px] uppercase lg:tracking-[5px] lg:text-[48px] leading-none;
+    @apply text-[36px] tracking-[10%] uppercase lg:text-[48px] leading-none;
   }
   h2 {
-    @apply text-[30px] tracking-[2px] lg:tracking-[3px] lg:text-[36px] leading-[110%];
+    @apply text-[30px] tracking-[10%] lg:text-[36px] leading-none;
+  }
+  h3 {
+    @apply text-[24px] tracking-[10%] lg:text-[30px] leading-none;
   }
 }
 
