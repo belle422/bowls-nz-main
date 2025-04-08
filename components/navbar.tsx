@@ -94,7 +94,7 @@ export default function Navbar() {
             <button onClick={() => setIsOpen(true)} className="text-white">
               <Menu strokeWidth={1} className="h-10 w-10" />
             </button>
-            <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
+            <Link href="/watch/livestreams">
               <MonitorPlay strokeWidth={1} className="h-10 w-10 text-white" />
             </Link>
           </div>
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <button onClick={() => setIsOpen(false)} className="text-brown">
                   <X strokeWidth={1} className="h-10 w-10" />
                 </button>
-                <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
+                <Link href="/watch/livestreams">
                   <MonitorPlay
                     strokeWidth={1}
                     className="h-10 w-10 text-brown"

@@ -59,6 +59,27 @@ export default function Home() {
     []
   );
 
+  const events = [
+    {
+      month: "Apr",
+      date: "18-21",
+      place: "Wellington",
+      name: "Kittyhawk National U21 Singles",
+    },
+    {
+      month: "May",
+      date: "03-04",
+      place: "HQ Royal Oak",
+      name: "National Bowls 3Five Finals",
+    },
+    {
+      month: "July",
+      date: "18-20",
+      place: "New Lynn + Royal Oak",
+      name: "Champ of Champs Singles",
+    },
+  ];
+
   return (
     <div className="relative flex min-h-screen flex-col">
       <Navbar />
@@ -153,7 +174,7 @@ export default function Home() {
             </div>
           </div>
           <div className="pl-2.5 pr-5 lg:pl-5 lg:pr-10 w-full ">
-            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:gap-20">
+            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between">
               <div className="flex justify-between w-full">
                 <p className="subheading">Upcoming Events</p>
                 <Link href="https://bowlsnewzealand.co.nz/events/">
@@ -163,51 +184,36 @@ export default function Home() {
                   />
                 </Link>
               </div>
-              <div className="flex items-start flex-col gap-5 text-brown w-full"></div>
+              <div className="flex items-start flex-col gap-4 text-brown w-full">
+                {events.map((event, index) => (
+                  <div
+                    key={index}
+                    className="w-full border-[1.5px] flex border-brown rounded-lg"
+                  >
+                    <div className="w-24 p-4 flex flex-col justify-center items-start gap-1">
+                      <p className="text-[10px] uppercase font-medium leading-none tracking-[1.5px]">
+                        {event.month}
+                      </p>
+                      <p className="text-[20px] leading-none tracking-[1px]">
+                        {event.date}
+                      </p>
+                    </div>
+                    <div className="bg-brown w-[1.5px] h-full" />
+                    <div className="p-4 flex flex-col justify-center items-start gap-1">
+                      <p className="text-[10px] uppercase font-medium leading-none tracking-[1.5px]">
+                        {event.place}
+                      </p>
+                      <p className="text-[20px] leading-none tracking-[1px]">
+                        {event.name}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* <section className="py-16 bg-sage/5">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-subsection text-forest uppercase mb-4">
-              UPCOMING EVENTS
-            </h2>
-            <Link
-              href="https://bowlsnewzealand.co.nz/events/"
-              className="float-right text-forest hover:text-forest-light flex items-center gap-1 mt-2 mb-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Calendar <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((item) => (
-              <Card key={item} className="flex border shadow-md">
-                <div className="bg-forest text-sage p-4 flex flex-col items-center justify-center">
-                  <span className="text-2xl font-bold">2{item}</span>
-                  <span className="text-sm">JUN</span>
-                </div>
-                <CardContent className="p-5 flex-1">
-                  <h3 className="text-lead font-bold mb-1">
-                    Regional Tournament
-                  </h3>
-                  <div className="text-caption text-forest-light mb-2 flex items-center gap-1">
-                    <MapPin className="h-4 w-4" /> Auckland Bowling Club
-                  </div>
-                  <p className="text-body text-forest-light">
-                    Annual regional tournament with teams from across the North
-                    Island.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Featured Content */}
       <section className="py-16 bg-white">
@@ -283,109 +289,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Journey Selector */}
-      <section className="py-16 bg-forest">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-subsection text-white mb-4">FIND YOUR PATH</h2>
-            <p className="text-xl text-sage max-w-3xl mx-auto mt-4">
-              Select your journey and we'll guide you to the resources that best
-              fit your needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="shadow-md bg-white rounded-none">
-              <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                <div className="rounded-full bg-forest/10 p-4 mb-6">
-                  <PlayCircle className="h-10 w-10 text-forest" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-forest">
-                  I Want to Play
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  Find a club, learn the basics, or join a competition. Get
-                  started with lawn bowls today.
-                </p>
-                <Button
-                  className="w-full bg-forest hover:bg-forest-light text-sage"
-                  onClick={() => router.push("/play-bowls")}
-                  disabled={isNavigating}
-                >
-                  Start Playing
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-md bg-white rounded-none">
-              <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                <div className="rounded-full bg-forest/10 p-4 mb-6">
-                  <Award className="h-10 w-10 text-forest" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-forest">
-                  I Want to Compete
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  Take your game to the next level. Find tournaments, rankings,
-                  and competitive opportunities.
-                </p>
-                <Button
-                  className="w-full bg-forest hover:bg-forest-light text-sage"
-                  onClick={() => router.push("/events")}
-                  disabled={isNavigating}
-                >
-                  Find Competitions
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-md bg-white rounded-none">
-              <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                <div className="rounded-full bg-forest/10 p-4 mb-6">
-                  <Whistle className="h-10 w-10 text-forest" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-forest">
-                  I Want to Coach
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  Develop your coaching skills and help others improve their
-                  game with our coaching resources.
-                </p>
-                <Button
-                  className="w-full bg-forest hover:bg-forest-light text-sage"
-                  onClick={() => router.push("/community/become-coach")}
-                  disabled={isNavigating}
-                >
-                  Coaching Resources
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-md bg-white rounded-none">
-              <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                <div className="rounded-full bg-forest/10 p-4 mb-6">
-                  <Users2 className="h-10 w-10 text-forest" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-forest">
-                  I Want to Volunteer
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  Give back to the sport by volunteering. Find opportunities to
-                  help at clubs and events.
-                </p>
-                <Button
-                  className="w-full bg-forest hover:bg-forest-light text-sage"
-                  onClick={() => router.push("/community/volunteers")}
-                  disabled={isNavigating}
-                >
-                  Volunteer Opportunities
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
