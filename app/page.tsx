@@ -18,6 +18,7 @@ import Footer from "@/components/footer";
 import { useRouter } from "next/navigation";
 import { useState, useCallback } from "react";
 import PartnerCarousel from "@/components/PartnerCarousel";
+import LatestNews from "@/components/LatestNews";
 
 export default function Home() {
   const router = useRouter();
@@ -62,7 +63,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="flex relative min-h-screen py-20 px-10 flex-col gap-10 justify-end items-start bg-brown">
+      <div className="flex relative h-[90vh] py-20 px-5 lg:px-10 flex-col gap-10 justify-end items-start bg-brown">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-image.png"
@@ -72,26 +73,28 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="space-y-5 z-10 text-white leading-none">
-          <h1>Welcome to Bowls New Zealand</h1>
-          <p className="text-[20px]">
-            Promoting and developing bowls at all levels.
-          </p>
-        </div>
-        <div className="flex gap-2.5 z-10">
-          <Button
-            onClick={() => router.push("/play-bowls/find-a-club")}
-            disabled={isNavigating}
-          >
-            Find a Club Near You
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => router.push("/play-bowls/how-to-play")}
-            disabled={isNavigating}
-          >
-            Learn to Play
-          </Button>
+        <div className="z-10 mx-auto max-w-[1440px] space-y-10 w-full">
+          <div className="space-y-5 text-white leading-none">
+            <h1>Welcome to Bowls New Zealand</h1>
+            <p className="text-[20px]">
+              Promoting and developing bowls at all levels.
+            </p>
+          </div>
+          <div className="flex gap-2.5">
+            <Button
+              onClick={() => router.push("/play-bowls/find-a-club")}
+              disabled={isNavigating}
+            >
+              Find a Club Near You
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => router.push("/play-bowls/how-to-play")}
+              disabled={isNavigating}
+            >
+              Learn to Play
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -102,130 +105,7 @@ export default function Home() {
       </div>
 
       {/* Latest News */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-subsection text-forest mb-4">
-              THE LATEST NEWS
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white shadow-md overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="/images/bowls-action.png"
-                  alt="Player in action at the National Championships"
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/fallback-news.jpg";
-                  }}
-                />
-                <div className="absolute top-0 left-0 m-3">
-                  <span className="inline-block bg-forest text-sage text-xs font-bold uppercase px-3 py-1">
-                    TOURNAMENT
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <div className="text-caption font-semibold text-forest-light uppercase mb-2">
-                  15 JUNE 2023
-                </div>
-                <h3 className="text-lead font-bold mb-3">
-                  National Championships Results
-                </h3>
-                <p className="text-body text-forest-light mb-4">
-                  The National Championships concluded with exciting finals
-                  across all divisions. Congratulations to all winners!
-                </p>
-                <Link
-                  href="/news/1"
-                  className="text-caption font-medium text-forest hover:text-forest-light"
-                >
-                  READ MORE
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white shadow-md overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="/images/colorful-bowls.png"
-                  alt="Colorful lawn bowls on the green"
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/fallback-news.jpg";
-                  }}
-                />
-                <div className="absolute top-0 left-0 m-3">
-                  <span className="inline-block bg-forest text-sage text-xs font-bold uppercase px-3 py-1">
-                    EQUIPMENT
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <div className="text-caption font-semibold text-forest-light uppercase mb-2">
-                  12 JUNE 2023
-                </div>
-                <h3 className="text-lead font-bold mb-3">
-                  Equipment Standards Updated
-                </h3>
-                <p className="text-body text-forest-light mb-4">
-                  Bowls New Zealand has released updated equipment standards for
-                  the upcoming season. Check the new approved bowl types.
-                </p>
-                <Link
-                  href="/news/2"
-                  className="text-caption font-medium text-forest hover:text-forest-light"
-                >
-                  READ MORE
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white shadow-md overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="/images/women-bowlers.png"
-                  alt="Women's competition at regional tournament"
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/fallback-news.jpg";
-                  }}
-                />
-                <div className="absolute top-0 left-0 m-3">
-                  <span className="inline-block bg-forest text-sage text-xs font-bold uppercase px-3 py-1">
-                    COMPETITION
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <div className="text-caption font-semibold text-forest-light uppercase mb-2">
-                  10 JUNE 2023
-                </div>
-                <h3 className="text-lead font-bold mb-3">
-                  Women's Regional Tournament Success
-                </h3>
-                <p className="text-body text-forest-light mb-4">
-                  The Women's Regional Tournament saw record participation this
-                  year with outstanding performances across all divisions.
-                </p>
-                <Link
-                  href="/news/3"
-                  className="text-caption font-medium text-forest hover:text-forest-light"
-                >
-                  READ MORE
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LatestNews />
 
       {/* Green Banner */}
       <section className="py-12 bg-forest">
