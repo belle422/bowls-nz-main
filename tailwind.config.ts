@@ -71,6 +71,8 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brown: "#403B23",
+        cream: "#F7F2E8",
         green: {
           50: "#f0fdf4",
           100: "#dcfce7",

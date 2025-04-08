@@ -7,9 +7,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ChevronRight,
   MapPin,
-  Calendar,
-  Trophy,
-  Users,
   PlayCircle,
   Award,
   BellIcon as Whistle,
@@ -20,6 +17,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { useRouter } from "next/navigation";
 import { useState, useCallback } from "react";
+import PartnerCarousel from "@/components/PartnerCarousel";
 
 export default function Home() {
   const router = useRouter();
@@ -59,129 +57,49 @@ export default function Home() {
     []
   );
 
-  // Custom style for shop product text
-  const normalTextStyle = {
-    fontFamily: "Apercu Pro, Inter, sans-serif",
-    fontStyle: "normal",
-    fontWeight: "normal",
-  };
-
-  const normalTextBoldStyle = {
-    fontFamily: "Apercu Pro, Inter, sans-serif",
-    fontStyle: "normal",
-    fontWeight: 500,
-  };
-
   return (
     <div className="relative flex min-h-screen flex-col">
       <Navbar />
-      {/* Hero Section */}
-      <div className="flex min-h-screen py-20 px-10 flex-col gap-10 bg-[#403B23]"></div>
-      {/* <section className="relative h-[80vh] top-0 bg-cover bg-center flex items-end px-8 py-12 text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/bowls-nz-homepage-banner.png"
-            alt="Lawn bowls on a green with black bowls and white jack"
-            fill
-            className="object-cover"
-            priority
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/images/fallback-banner.jpg";
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60 z-[1]" />
-        </div>
-        <div className="relative z-[2] w-full">
-          <div className="flex items-end justify-between w-full pt-4">
-            <div className="p-4 md:p-6">
-              <h1 className="text-4xl md:text-5xl font-bold uppercase leading-relaxed">
-                WELCOME TO
-                <br />
-                BOWLS
-                <br />
-                NEW ZEALAND
-              </h1>
-              <div className="w-20 h-px bg-white/40 my-3"></div>
-              <p className="text-sm tracking-wide">● AOTEAROA </p>
-            </div>
-            <div className="hidden md:flex items-end space-x-4">
-              <Button
-                size="lg"
-                className="bg-forest hover:bg-forest-light text-sage"
-                onClick={() => router.push("/play-bowls/find-a-club")}
-                disabled={isNavigating}
-              >
-                Find a Club Near You
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white bg-white/10 hover:bg-white/20 text-white"
-                onClick={() => router.push("/play-bowls/how-to-play")}
-                disabled={isNavigating}
-              >
-                Learn to Play
-              </Button>
-            </div>
-          </div>
-          <div className="mt-8 md:hidden flex flex-wrap gap-4">
-            <Button
-              size="lg"
-              className="bg-forest hover:bg-forest-light text-sage"
-              onClick={() => router.push("/play-bowls/find-a-club")}
-              disabled={isNavigating}
-            >
-              Find a Club Near You
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white bg-white/10 hover:bg-white/20 text-white"
-              onClick={() => router.push("/play-bowls/how-to-play")}
-              disabled={isNavigating}
-            >
-              Learn to Play
-            </Button>
-          </div>
-        </div>
-      </section> */}
 
-      {/* Quick Links */}
-      <section className="bg-forest py-6">
-        <div className="container grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link
-            href="/play-bowls/find-a-club"
-            className="flex items-center justify-center gap-2 bg-black text-white p-3 rounded-md hover:bg-gray-900"
-          >
-            <MapPin className="h-5 w-5" />
-            <span className="font-medium">Find a Club</span>
-          </Link>
-          <Link
-            href="https://bowlsnewzealand.co.nz/events/"
-            className="flex items-center justify-center gap-2 text-sage font-medium hover:text-sage-light p-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Calendar className="h-5 w-5" />
-            <span>Events Calendar</span>
-          </Link>
-          <Link
-            href="/watch/livestreams"
-            className="flex items-center justify-center gap-2 text-sage font-medium hover:text-sage-light p-2"
-          >
-            <Trophy className="h-5 w-5" />
-            <span>Livestreams</span>
-          </Link>
-          <Link
-            href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers"
-            className="flex items-center justify-center gap-2 text-sage font-medium hover:text-sage-light p-2"
-          >
-            <Users className="h-5 w-5" />
-            <span>Login / Register</span>
-          </Link>
+      {/* Hero Section */}
+      <div className="flex relative min-h-screen py-20 px-10 flex-col gap-10 justify-end items-start bg-brown">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-image.png"
+            alt="Lawn bowls on a green with black bowls and white jack"
+            className="object-cover opacity-60"
+            fill
+            priority
+          />
         </div>
-      </section>
+        <div className="space-y-5 z-10 text-white leading-none">
+          <h1>Welcome to Bowls New Zealand</h1>
+          <p className="text-[20px]">
+            Promoting and developing bowls at all levels.
+          </p>
+        </div>
+        <div className="flex gap-2.5 z-10">
+          <Button
+            onClick={() => router.push("/play-bowls/find-a-club")}
+            disabled={isNavigating}
+          >
+            Find a Club Near You
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => router.push("/play-bowls/how-to-play")}
+            disabled={isNavigating}
+          >
+            Learn to Play
+          </Button>
+        </div>
+      </div>
+
+      {/* Logo Carousel */}
+      <div className="py-10 bg-white flex flex-col gap-5 items-center border-b border-brown/30">
+        <p className="subheading text-brown">Funding Partners</p>
+        <PartnerCarousel />
+      </div>
 
       {/* Latest News */}
       <section className="py-16 bg-white">
@@ -559,14 +477,14 @@ export default function Home() {
                   alt="Product"
                   className="w-full"
                 />
-                <div className="p-4 space-y-1">
+                {/* <div className="p-4 space-y-1">
                   <h3 style={normalTextBoldStyle} className="text-sm">
                     Women's Bowls New Zealand Polo
                   </h3>
                   <p style={normalTextStyle} className="text-sm text-gray-600">
                     $69.95
                   </p>
-                </div>
+                </div> */}
               </div>
             </Link>
 
@@ -583,14 +501,14 @@ export default function Home() {
                   alt="Product"
                   className="w-full"
                 />
-                <div className="p-4 space-y-1">
+                {/* <div className="p-4 space-y-1">
                   <h3 style={normalTextBoldStyle} className="text-sm">
                     Women's Bowls New Zealand Polo
                   </h3>
                   <p style={normalTextStyle} className="text-sm text-gray-600">
                     $69.95
                   </p>
-                </div>
+                </div> */}
               </div>
             </Link>
 
@@ -607,14 +525,14 @@ export default function Home() {
                   alt="Product"
                   className="w-full"
                 />
-                <div className="p-4 space-y-1">
+                {/* <div className="p-4 space-y-1">
                   <h3 style={normalTextBoldStyle} className="text-sm">
                     Women's Bowls New Zealand Polo
                   </h3>
                   <p style={normalTextStyle} className="text-sm text-gray-600">
                     $69.95
                   </p>
-                </div>
+                </div> */}
               </div>
             </Link>
 

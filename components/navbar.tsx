@@ -94,7 +94,7 @@ export default function Navbar() {
             <button onClick={() => setIsOpen(true)} className="text-white">
               <Menu strokeWidth={1.5} className="h-10 w-10" />
             </button>
-            <Link href="/watch/bowls-tv">
+            <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
               <MonitorPlay strokeWidth={1.5} className="h-10 w-10 text-white" />
             </Link>
           </div>
@@ -127,20 +127,17 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed top-0 z-50 w-full bg-white h-screen text-[#403B23]">
-          <div className="px-5 lg:px-10 py-2.5 lg:pt-5 lg:pb-10 mx-auto max-w-[1440px] flex flex-col gap-5 lg:justify-between h-full overflow-y-auto">
+        <div className="fixed top-0 z-50 w-full bg-white h-screen text-brown">
+          <div className="px-5 lg:px-10 pt-2.5 pb-5 lg:pt-5 lg:pb-10 mx-auto max-w-[1440px] flex flex-col gap-5 lg:justify-between h-full overflow-y-auto">
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-5">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="text-[#403B23]"
-                >
+                <button onClick={() => setIsOpen(false)} className="text-brown">
                   <X strokeWidth={1.5} className="h-10 w-10" />
                 </button>
-                <Link href="/watch/bowls-tv">
+                <Link href="https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers">
                   <MonitorPlay
                     strokeWidth={1.5}
-                    className="h-10 w-10 text-[#403B23]"
+                    className="h-10 w-10 text-brown"
                   />
                 </Link>
               </div>
@@ -157,7 +154,7 @@ export default function Navbar() {
                 <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
                   <ShoppingCart
                     strokeWidth={1.5}
-                    className="h-10 w-10 text-[#403B23]"
+                    className="h-10 w-10 text-brown"
                   />
                 </Link>
                 <Link
@@ -166,7 +163,7 @@ export default function Navbar() {
                 >
                   <CircleUserRound
                     strokeWidth={1.5}
-                    className="h-10 w-10 text-[#403B23]"
+                    className="h-10 w-10 text-brown"
                   />
                 </Link>
               </div>
@@ -175,7 +172,7 @@ export default function Navbar() {
               {navItems.map((section) => (
                 <div
                   key={section.title}
-                  className="flex pb-2.5 lg:pb-0 border-b border-[#403B23] lg:border-none lg:flex-col gap-2.5 w-full"
+                  className="flex pb-2.5 lg:pb-0 border-b border-brown lg:border-none lg:flex-col gap-2.5 w-full"
                 >
                   <h3 className="w-full font-semibold text-[18px] leading-none tracking-[1px] uppercase">
                     {section.title}
