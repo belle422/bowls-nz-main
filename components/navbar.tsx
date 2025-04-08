@@ -171,16 +171,14 @@ export default function Navbar() {
                   key={section.title}
                   className="flex pb-2.5 lg:pb-0 border-b border-brown lg:border-none lg:flex-col gap-2.5 w-full"
                 >
-                  <h3 className="w-full font-semibold text-[18px] leading-none tracking-[1px] uppercase">
-                    {section.title}
-                  </h3>
+                  <h3 className="w-full nav-title">{section.title}</h3>
                   <ul className="lg:space-y-1 w-full">
                     {section.children.map((item) => (
                       <li key={item.title}>
                         <Link
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-[16px] hover:text-black leading-none"
+                          className="paragraph-base hover:text-black leading-none"
                         >
                           {item.title}
                         </Link>
@@ -190,7 +188,7 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-between text-[12px] leading-none">
+            <div className="flex items-center justify-between paragraph-xs">
               <p>
                 The national governing body for lawn bowls in Aotearoa New
                 Zealand, promoting and developing the sport at all levels.

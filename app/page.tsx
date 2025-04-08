@@ -80,6 +80,30 @@ export default function Home() {
     },
   ];
 
+  const products = [
+    {
+      title: "Women's Bowls New Zealand Polo",
+      src: "/images/womens-polo-1.png",
+      alt: "Women's Bowls New Zealand Polo",
+      href: "https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1",
+      price: "$59.95",
+    },
+    {
+      title: "Women's Bowls New Zealand Polo",
+      src: "/images/womens-polo-2.png",
+      alt: "Women's Bowls New Zealand Polo",
+      href: "https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1",
+      price: "$69.95",
+    },
+    {
+      title: "Women's Bowls New Zealand Polo",
+      src: "/images/womens-polo-logo.png",
+      alt: "Women's Bowls New Zealand Polo",
+      href: "https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1",
+      price: "$49.95",
+    },
+  ];
+
   return (
     <div className="relative flex min-h-screen flex-col">
       <Navbar />
@@ -98,7 +122,7 @@ export default function Home() {
         <div className="z-10 mx-auto max-w-[1440px] space-y-10 w-full">
           <div className="space-y-5 text-white leading-none">
             <h1>Welcome to Bowls New Zealand</h1>
-            <p className="text-[20px]">
+            <p className="paragraph-lg font-medium">
               Promoting and developing bowls at all levels.
             </p>
           </div>
@@ -190,22 +214,14 @@ export default function Home() {
                     key={index}
                     className="w-full border-[1.5px] flex border-brown rounded-lg"
                   >
-                    <div className="w-24 p-4 flex flex-col justify-center items-start gap-1">
-                      <p className="text-[10px] uppercase font-medium leading-none tracking-[1.5px]">
-                        {event.month}
-                      </p>
-                      <p className="text-[20px] leading-none tracking-[1px]">
-                        {event.date}
-                      </p>
+                    <div className="w-28 p-4 flex flex-col justify-center items-start gap-1">
+                      <p className="label">{event.month}</p>
+                      <p className="paragraph-lg">{event.date}</p>
                     </div>
                     <div className="bg-brown w-[1.5px] h-full" />
                     <div className="p-4 flex flex-col justify-center items-start gap-1">
-                      <p className="text-[10px] uppercase font-medium leading-none tracking-[1.5px]">
-                        {event.place}
-                      </p>
-                      <p className="text-[20px] leading-none tracking-[1px]">
-                        {event.name}
-                      </p>
+                      <p className="label">{event.place}</p>
+                      <p className="paragraph-lg truncate">{event.name}</p>
                     </div>
                   </div>
                 ))}
@@ -215,197 +231,82 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Content */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 overflow-hidden shadow-md">
-              <div className="aspect-video w-full">
-                <iframe
-                  src="https://www.youtube.com/embed?listType=user_uploads&list=bowlsnewzealand&index=0"
-                  title="Latest Bowls New Zealand Video"
-                  className="w-full h-full"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
+      {/* Shop */}
+      <div className="bg-white py-[60px] border-b-[1.5px] border-brown/30">
+        <div className="mx-auto max-w-[1440px] flex flex-col  w-full gap-20 px-10 text-brown">
+          <div className="w-full flex gap-10 items-start">
+            <div className="space-y-2.5 w-full">
+              <p className="subheading">Shop Our Collection</p>
+              <p className="paragraph-base">
+                Free shipping on all orders across New Zealand when you spend
+                $20 or more!
+              </p>
+            </div>
+            <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
+              <Button variant="secondary">View Full Collection</Button>
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {products.map((products, index) => (
+              <Link
+                href={products.href}
+                target="_blank"
+                key={index}
+                className="flex flex-col gap-5 items-start hover:scale-105"
+              >
+                <Image
+                  src={products.src}
+                  alt={products.alt}
+                  width={412}
+                  height={412}
+                />
+                <div className="flex flex-col items-center w-full gap-2.5">
+                  <p className="paragraph-base font-medium">{products.title}</p>
+                  <p className="paragraph-xl font-medium">{products.price}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bowls TV */}
+      <div className="bg-white py-5">
+        <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row w-full">
+          <div className="pl-5 lg:pl-10 w-full">
+            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between">
+              <div className="flex justify-between items-start">
+                <p className="subheading">Latest from Bowls TV</p>
               </div>
-              <div className="bg-sage/5 p-4">
-                <h3 className="text-lead font-bold mb-2">
-                  Latest from Bowls TV
-                </h3>
-                <p className="text-body text-forest-light mb-4">
+              <div className="w-full flex flex-col gap-5">
+                <p>
                   Watch the latest videos from Bowls New Zealand's official
                   YouTube channel.
                 </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="overflow-hidden shadow-md h-full bg-white p-4">
-                <h3 className="text-xl font-bold mb-3">
-                  Follow Us on Facebook
-                </h3>
-
-                {/* Facebook embed using iframe */}
-                <div
-                  className="relative overflow-hidden"
-                  style={{ minHeight: "500px" }}
+                <Link
+                  href="https://www.youtube.com/user/bowlsnewzealand"
+                  target="_blank"
                 >
-                  <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBowlsNewZealand&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"
-                    width="100%"
-                    height="500"
-                    style={{ border: "none", overflow: "hidden" }}
-                    scrolling="no"
-                    frameBorder="0"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  ></iframe>
-                </div>
-
-                {/* Link to Facebook */}
-                <div className="mt-4">
-                  <a
-                    href="https://www.facebook.com/BowlsNewZealand"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-forest hover:text-forest-light font-medium inline-flex items-center gap-2"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-5 h-5"
-                    >
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                    Visit our Facebook page
-                  </a>
-                </div>
+                  <Button variant="outline" className="text-brown border-brown">
+                    See More
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Shop Section */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Product 1 */}
-            <Link
-              href="https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1"
-              className="group"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="bg-white border border-gray-100 rounded-md overflow-hidden hover:shadow-sm transition">
-                <img
-                  src="/images/womens-polo-1.png"
-                  alt="Product"
-                  className="w-full"
-                />
-                {/* <div className="p-4 space-y-1">
-                  <h3 style={normalTextBoldStyle} className="text-sm">
-                    Women's Bowls New Zealand Polo
-                  </h3>
-                  <p style={normalTextStyle} className="text-sm text-gray-600">
-                    $69.95
-                  </p>
-                </div> */}
-              </div>
-            </Link>
-
-            {/* Product 2 */}
-            <Link
-              href="https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1"
-              className="group"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="bg-white border border-gray-100 rounded-md overflow-hidden hover:shadow-sm transition">
-                <img
-                  src="/images/womens-polo-2.png"
-                  alt="Product"
-                  className="w-full"
-                />
-                {/* <div className="p-4 space-y-1">
-                  <h3 style={normalTextBoldStyle} className="text-sm">
-                    Women's Bowls New Zealand Polo
-                  </h3>
-                  <p style={normalTextStyle} className="text-sm text-gray-600">
-                    $69.95
-                  </p>
-                </div> */}
-              </div>
-            </Link>
-
-            {/* Product 3 */}
-            <Link
-              href="https://shop.bowlsnewzealand.co.nz/collections/clothing/products/womens-bowls-new-zealand-polo-1"
-              className="group"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="bg-white border border-gray-100 rounded-md overflow-hidden hover:shadow-sm transition">
-                <img
-                  src="/images/womens-polo-logo.png"
-                  alt="Product"
-                  className="w-full"
-                />
-                {/* <div className="p-4 space-y-1">
-                  <h3 style={normalTextBoldStyle} className="text-sm">
-                    Women's Bowls New Zealand Polo
-                  </h3>
-                  <p style={normalTextStyle} className="text-sm text-gray-600">
-                    $69.95
-                  </p>
-                </div> */}
-              </div>
-            </Link>
-
-            {/* Shop All Card */}
-            <Link
-              href="https://shop.bowlsnewzealand.co.nz/"
-              className="group"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="bg-gray-50 border border-gray-200 overflow-hidden shadow-sm group-hover:shadow-md transition-shadow h-full flex flex-col justify-center items-center p-6">
-                <div className="rounded-full bg-forest p-4 mb-6">
-                  <ShoppingBag className="h-10 w-10 text-sage" />
-                </div>
-                <h3 className="font-bold text-xl mb-3 text-center">
-                  Shop All Products
-                </h3>
-                <p className="text-gray-600 mb-6 text-center">
-                  Browse our full range of official Bowls New Zealand
-                  merchandise.
-                </p>
-                <Button
-                  className="bg-forest hover:bg-forest-light text-sage"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://shop.bowlsnewzealand.co.nz/",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  }}
-                >
-                  Visit Shop
-                </Button>
-              </div>
-            </Link>
+          <div className="pl-2.5 lg:pl-5 pr-5 lg:pr-10 w-full h-f">
+            <div className="aspect-video w-full">
+              <iframe
+                src="https://www.youtube.com/embed?listType=user_uploads&list=bowlsnewzealand&index=0"
+                title="Latest Bowls New Zealand Video"
+                className="w-full h-full"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </div>
           </div>
         </div>
-      </section>
-
+      </div>
       <Footer />
     </div>
   );

@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { PlayCircle, Trophy, BookCopy, Handshake } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
 import { Button } from "./ui/button";
 
 export default function FindYourPath() {
@@ -49,7 +51,7 @@ export default function FindYourPath() {
       <div className="px-5 lg:px-10 mx-auto max-w-[1440px] flex flex-col gap-20 w-full">
         <div className="space-y-5 text-brown">
           <h2 className="uppercase">Find Your Path</h2>
-          <p className="font-medium text-[16px] leading-[120%]">
+          <p className="font-medium paragraph-base">
             Select your journey and we'll guide you to the resources that best
             fit your needs.
           </p>
@@ -58,7 +60,7 @@ export default function FindYourPath() {
           {userJourneys.map((userJourney, index) => (
             <div
               key={index}
-              className="bg-cream px-8 py-5 flex flex-col items-start gap-8"
+              className="bg-cream p-8 flex flex-col items-start gap-8"
             >
               <div className="rounded-lg border-[1.5px] border-brown p-3">
                 <userJourney.icon
@@ -66,15 +68,15 @@ export default function FindYourPath() {
                   className="text-brown h-9 w-9"
                 />
               </div>
-              <div className="text-brown space-y-2.5">
+              <div className="text-brown flex flex-col flex-grow gap-2.5">
                 <h4 className="uppercase">{userJourney.title}</h4>
-                <p className="text-[14px] leading-[130%]">
-                  {userJourney.description}
-                </p>
+                <p className="paragraph-sm">{userJourney.description}</p>
               </div>
-              <Button className="w-full" variant="secondary" size="sm">
-                {userJourney.CTA}
-              </Button>
+              <Link href={userJourney.href}>
+                <Button className="w-full" variant="secondary">
+                  {userJourney.CTA}
+                </Button>
+              </Link>
             </div>
           ))}
         </div>

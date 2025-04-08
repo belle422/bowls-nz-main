@@ -80,7 +80,7 @@ export default function NewsCarousel() {
               <div className="flex flex-col gap-2.5">
                 <p className="subheading">{article.tag}</p>
                 <h2 className="leading-[110%]">{article.title}</h2>
-                <p className="text-[16px] leading-none font-medium">
+                <p className="paragraph-base font-medium">
                   Publish date: {article.date}
                 </p>
               </div>

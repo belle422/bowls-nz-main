@@ -118,6 +118,27 @@ h6 {
   .subheading {
     @apply text-[16px] uppercase leading-none font-medium;
   }
+  .label {
+    @apply text-[10px] uppercase font-medium leading-none tracking-[1.5px];
+  }
+  .paragraph-xs {
+    @apply text-[12px] leading-none;
+  }
+  .paragraph-sm {
+    @apply text-[14px] leading-[130%] tracking-[5%];
+  }
+  .paragraph-base {
+    @apply text-[16px] leading-[120%] tracking-[5%];
+  }
+  .paragraph-lg {
+    @apply text-[20px] leading-[115%] tracking-[5%];
+  }
+  .paragraph-xl {
+    @apply text-[24px] leading-[110%] tracking-[5%];
+  }
+  .nav-title {
+    @apply font-semibold text-[18px] leading-none tracking-[5%] uppercase;
+  }
 }
 
 @keyframes scroll {
