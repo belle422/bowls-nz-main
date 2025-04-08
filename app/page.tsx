@@ -20,6 +20,7 @@ import { useState, useCallback } from "react";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import LatestNews from "@/components/LatestNews";
 import FindYourPath from "@/components/FindYourPath";
+import CommercialPartnerCarousel from "@/components/CommercialPartnerCarousel";
 
 export default function Home() {
   const router = useRouter();
@@ -101,8 +102,8 @@ export default function Home() {
 
       {/* Logo Carousel */}
       <div className="py-10 bg-white flex flex-col gap-5 items-center border-b border-brown/30">
-        <p className="subheading text-brown">Funding Partners</p>
-        <PartnerCarousel />
+        <p className="subheading text-brown">Commercial Partners</p>
+        <CommercialPartnerCarousel />
       </div>
 
       <LatestNews />
@@ -130,6 +131,12 @@ export default function Home() {
       </div>
 
       <FindYourPath />
+
+      {/* Logo Carousel */}
+      <div className="py-10 bg-white flex flex-col gap-5 items-center border-b border-brown/30">
+        <p className="subheading text-brown">Funding Partners</p>
+        <PartnerCarousel />
+      </div>
 
       {/* Upcoming Events */}
       <section className="py-16 bg-sage/5">
