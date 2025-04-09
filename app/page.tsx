@@ -3,15 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  PlayCircle,
-  Award,
-  BellIcon as Whistle,
-  Users2,
-  ShoppingBag,
-  CalendarDays,
-} from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { useRouter } from "next/navigation";
