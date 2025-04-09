@@ -57,6 +57,7 @@ export default function NewsCarousel() {
               width={600}
               height={508}
               className="object-cover"
+              priority
             />
           </div>
         </div>

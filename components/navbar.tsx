@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -13,6 +13,16 @@ import {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     {
@@ -87,37 +97,63 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 z-40 w-full bg-transparent backdrop-blur-sm">
+    <header
+      className={`fixed top-0 z-40 w-full transition-all duration-300 ${
+        scrolled ? "bg-white/60 py-1" : "bg-transparent py-5"
+      } backdrop-blur-sm`}
+    >
       <div className="mx-auto max-w-[1440px] py-5 px-5 lg:px-10">
         <div className="flex items-start justify-between">
           <div className="flex gap-5 items-center">
-            <button onClick={() => setIsOpen(true)} className="text-white">
-              <Menu strokeWidth={1} className="h-10 w-10" />
+            <button
+              onClick={() => setIsOpen(true)}
+              className={scrolled ? "text-black" : "text-white"}
+            >
+              <Menu strokeWidth={1} className="h-10 w-10 lg:h-7 lg:w-7" />
             </button>
-            <Link href="/watch/livestreams">
-              <MonitorPlay strokeWidth={1} className=" h-10 w-10 text-white" />
+            <Link
+              href="/watch/livestreams"
+              className={scrolled ? "text-black" : "text-white"}
+            >
+              <MonitorPlay
+                strokeWidth={1}
+                className="h-10 w-10 lg:h-7 lg:w-7"
+              />
             </Link>
           </div>
+          {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/bowls-nz-logo-white.png"
+              src={
+                scrolled
+                  ? "/images/bowls-nz-logo.png"
+                  : "/images/bowls-nz-logo-white.png"
+              }
               alt="Bowls New Zealand Logo"
-              width={109}
-              height={96}
+              width={68}
+              height={60}
               priority
             />
           </Link>
           <div className="flex gap-5 items-center">
-            <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
-              <ShoppingCart strokeWidth={1} className="text-white h-10 w-10" />
+            <Link
+              href="https://shop.bowlsnewzealand.co.nz"
+              target="_blank"
+              className={scrolled ? "text-black" : "text-white"}
+            >
+              <ShoppingCart
+                strokeWidth={1}
+                className="h-10 w-10 lg:w-7 lg:h-7"
+              />
             </Link>
             <Link
               href="https://www.bowlshub.co.nz/authenticate/login"
               target="_blank"
+              className={scrolled ? "text-black" : "text-white"}
             >
               <CircleUserRound
                 strokeWidth={1}
-                className=" text-white h-10 w-10"
+                className="h-10 w-10 lg:h-7 lg:w-7"
               />
             </Link>
           </div>

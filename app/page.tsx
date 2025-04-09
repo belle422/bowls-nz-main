@@ -208,7 +208,7 @@ export default function Home() {
                   />
                 </Link>
               </div>
-              <div className="flex items-start flex-col gap-4 text-brown w-full">
+              <div className="flex items-start md:flex-col gap-4 text-brown w-full">
                 {events.map((event, index) => (
                   <div
                     key={index}
@@ -218,10 +218,10 @@ export default function Home() {
                       <p className="label">{event.month}</p>
                       <p className="paragraph-lg">{event.date}</p>
                     </div>
-                    <div className="bg-brown w-[1.5px] h-full" />
+                    <div className="bg-brown md:w-[1.5px] h-[1.5px] w-full md:h-full" />
                     <div className="p-4 flex flex-col justify-center items-start gap-1">
                       <p className="label">{event.place}</p>
-                      <p className="paragraph-lg truncate">{event.name}</p>
+                      <p className="paragraph-lg lg:truncate">{event.name}</p>
                     </div>
                   </div>
                 ))}
