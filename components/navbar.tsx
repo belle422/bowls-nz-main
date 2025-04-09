@@ -95,7 +95,7 @@ export default function Navbar() {
               <Menu strokeWidth={1} className="h-10 w-10" />
             </button>
             <Link href="/watch/livestreams">
-              <MonitorPlay strokeWidth={1} className="h-10 w-10 text-white" />
+              <MonitorPlay strokeWidth={1} className=" h-10 w-10 text-white" />
             </Link>
           </div>
           <Link href="/">
@@ -109,7 +109,7 @@ export default function Navbar() {
           </Link>
           <div className="flex gap-5 items-center">
             <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
-              <ShoppingCart strokeWidth={1} className="h-10 w-10 text-white" />
+              <ShoppingCart strokeWidth={1} className="text-white h-10 w-10" />
             </Link>
             <Link
               href="https://www.bowlshub.co.nz/authenticate/login"
@@ -117,7 +117,7 @@ export default function Navbar() {
             >
               <CircleUserRound
                 strokeWidth={1}
-                className="h-10 w-10 text-white"
+                className=" text-white h-10 w-10"
               />
             </Link>
           </div>
@@ -134,7 +134,7 @@ export default function Navbar() {
                 <Link href="/watch/livestreams">
                   <MonitorPlay
                     strokeWidth={1}
-                    className="h-10 w-10 text-brown"
+                    className=" text-brown h-10 w-10"
                   />
                 </Link>
               </div>
@@ -151,7 +151,7 @@ export default function Navbar() {
                 <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
                   <ShoppingCart
                     strokeWidth={1}
-                    className="h-10 w-10 text-brown"
+                    className=" text-brown h-10 w-10"
                   />
                 </Link>
                 <Link
@@ -160,7 +160,7 @@ export default function Navbar() {
                 >
                   <CircleUserRound
                     strokeWidth={1}
-                    className="h-10 w-10 text-brown"
+                    className=" text-brown h-10 w-10"
                   />
                 </Link>
               </div>

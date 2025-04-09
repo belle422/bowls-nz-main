@@ -122,7 +122,7 @@ h6 {
     @apply text-[10px] uppercase font-medium leading-none tracking-[1.5px];
   }
   .paragraph-xs {
-    @apply text-[12px] leading-none;
+    @apply text-[12px] leading-none tracking-[5%];
   }
   .paragraph-sm {
     @apply text-[14px] leading-[130%] tracking-[5%];
@@ -138,6 +138,9 @@ h6 {
   }
   .nav-title {
     @apply font-semibold text-[18px] leading-none tracking-[5%] uppercase;
+  }
+  .footer-title {
+    @apply text-[20px] leading-none font-medium uppercase tracking-[10%] text-white;
   }
 }
 
