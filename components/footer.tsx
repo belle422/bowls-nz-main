@@ -47,17 +47,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-cream relative">
-      <div className="absolute z-0">
+    <footer className="bg-brown relative w-full">
+      <div className="absolute z-0 w-full h-full">
         <Image
           src="/images/grass-bg.png"
           alt="Grass texture background"
-          width={1280}
+          width={2560}
           height={512}
         />
       </div>
-      <div className="flex flex-col items-start w-full gap-20 mx-auto px-5 lg:px-10 py-10 z-10 text-white">
-        <div className="grid md:grid-cols-2 z-10 lg:grid-cols-12 gap-2.5">
+      <div className="flex flex-col items-start w-full gap-20 mx-auto max-w-[1440px] px-5 lg:px-10 py-10 z-10 text-white">
+        <div className="grid md:grid-cols-2 z-10 lg:grid-cols-12 gap-2.5 w-full">
           <div className="flex flex-col gap-10 lg:col-span-3">
             <Link href="/">
               <Image
@@ -83,20 +83,20 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2.5 w-full">
               <div className="flex gap-2.5 items-start ">
-                <MapPin strokeWidth={1.5} className="text-white h-10 w-10" />
+                <MapPin strokeWidth={1.5} className="text-white h-3.5 w-3.5" />
                 <p>
                   105A Jervois Road, Herne Bay, <br /> Auckland, <br />
                   New Zealand
                 </p>
               </div>
               <div className="flex gap-2.5 items-start">
-                <Phone strokeWidth={1.5} className="text-white h-10 w-10" />
+                <Phone strokeWidth={1.5} className="text-white h-3.5 w-3.5" />
                 <Link className="underline" href="tel:+6495975853">
                   +64 (09) 597 5853
                 </Link>
               </div>
               <div className="flex gap-2.5 items-start">
-                <Mail strokeWidth={1.5} className="text-white h-10 w-10" />
+                <Mail strokeWidth={1.5} className="text-white h-3.5 w-3.5" />
                 <Link
                   className="underline"
                   href="mailto:info@bowlsnewzealand.co.nz"
@@ -117,16 +117,16 @@ export default function Footer() {
               <p className="paragraph-sm">
                 Subscribe to our newsletter for the latest news and updates.
               </p>
-              <form onSubmit={handleSubmit} className="space-y-2.5">
+              <form onSubmit={handleSubmit} className="space-y-2.5 w-full">
                 <Input
                   type="name"
                   placeholder="Name"
-                  className="bg-transparent border-[1.5px] border-white rounded-lg px-2.5 py-4 placeholder:text-white/80"
+                  className="bg-transparent  w-fullborder-[1.5px] border-white rounded-lg px-2.5 py-4 placeholder:text-white/80"
                 />
                 <Input
                   type="email"
                   placeholder="Email address"
-                  className="bg-transparent border-[1.5px] border-white rounded-lg px-2.5 py-4 placeholder:text-white/80"
+                  className="bg-transparent w-full border-[1.5px] border-white rounded-lg px-2.5 py-4 placeholder:text-white/80"
                 />
                 <Button type="submit" className="w-full">
                   Subscribe

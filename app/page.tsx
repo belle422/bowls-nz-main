@@ -109,7 +109,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="flex relative h-[90vh] py-20 px-5 lg:px-10 flex-col gap-10 justify-end items-start bg-brown">
+      <div className="flex relative h-[596px]  py-20 px-5 lg:px-10 flex-col gap-10 justify-end items-start bg-brown">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-image.png"
