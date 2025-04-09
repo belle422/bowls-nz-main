@@ -20,7 +20,7 @@ const logos = [
 export default function PartnerCarousel() {
   return (
     <div className="overflow-hidden w-full">
-      <div className="flex animate-scroll gap-40 h-20 min-w-[200%] justify-center items-center whitespace-nowrap">
+      <div className="flex animate-scroll gap-20 lg:gap-40 h-20 min-w-[200%] justify-center items-center whitespace-nowrap">
         {logos.concat(logos).map((logo, idx) => (
           <div key={idx} className="flex-shrink-0">
             <Image

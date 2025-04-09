@@ -2,15 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -47,8 +39,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brown relative w-full">
-      <div className="absolute z-0 w-full h-full">
+    <footer className="bg-brown relative w-full overflow-clip lg:h-[512px]">
+      <div className="hidden lg:block lg:absolute z-0 w-full h-full">
         <Image
           src="/images/grass-bg.png"
           alt="Grass texture background"
@@ -56,9 +48,9 @@ export default function Footer() {
           height={512}
         />
       </div>
-      <div className="flex flex-col items-start w-full gap-20 mx-auto max-w-[1440px] px-5 lg:px-10 py-10 z-10 text-white">
-        <div className="grid md:grid-cols-2 z-10 lg:grid-cols-12 gap-2.5 w-full">
-          <div className="flex flex-col gap-10 lg:col-span-3">
+      <div className="flex flex-col items-start w-full gap-10 lg:gap-20 mx-auto max-w-[1440px] px-5 lg:px-10 py-10 z-10 text-white">
+        <div className="grid md:grid-cols-2 z-10 lg:grid-cols-12 gap-10 md:gap-2.5 w-full">
+          <div className="flex md:flex-col gap-10 lg:col-span-3">
             <Link href="/">
               <Image
                 src="/images/bowls-nz-logo-white.png"
@@ -75,8 +67,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-10 paragraph-sm w-full lg:col-span-3">
-            <div className="h-20">
+          <div className="flex flex-col gap-5 md:gap-10 paragraph-sm w-full lg:col-span-3">
+            <div className="md:h-20">
               <Link href="/contact">
                 <h6 className="footer-title">Contact</h6>
               </Link>
@@ -107,8 +99,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="hidden lg:col-span-2 lg:flex" />
-          <div className="flex flex-col gap-10 paragraph-sm w-full lg:col-span-4">
-            <div className="h-20">
+          <div className="flex flex-col gap-5 lg:gap-10 paragraph-sm w-full lg:col-span-4">
+            <div className="md:h-20">
               <Link href="/contact">
                 <h6 className="footer-title">Newsletter</h6>
               </Link>
@@ -135,12 +127,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between paragraph-xs z-10 text-white w-full">
+        <div className="flex flex-col md:flex-row space-y-2.5 md:space-y-0 items-center justify-between paragraph-xs z-10 text-white w-full">
           <p>
             The national governing body for lawn bowls in Aotearoa New Zealand,
             promoting and developing the sport at all levels.
           </p>
-          <p>© 2025 Bowls New Zealand. All rights reserved.</p>
+          <p>© {currentYear} Bowls New Zealand. All rights reserved.</p>
         </div>
       </div>
     </footer>

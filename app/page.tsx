@@ -105,7 +105,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative flex min-h-screen flex-col">
+    <div className="relative flex min-h-screen flex-col w-full">
       <Navbar />
 
       {/* Hero Section */}
@@ -126,7 +126,7 @@ export default function Home() {
               Promoting and developing bowls at all levels.
             </p>
           </div>
-          <div className="flex gap-2.5">
+          <div className="flex flex-col md:flex-row gap-2.5">
             <Button
               onClick={() => router.push("/play-bowls/find-a-club")}
               disabled={isNavigating}
@@ -163,7 +163,7 @@ export default function Home() {
           />
         </div>
         <div className="z-10 mx-auto max-w-[1440px] space-y-10 w-full">
-          <h3 className="text-white w-[80%] leading-[130%]">
+          <h3 className="text-white lg:w-[80%] leading-[130%]">
             <span className="italic">
               Rooted in tradition but focused on the future, Bowls New Zealand
               is{" "}
@@ -186,7 +186,7 @@ export default function Home() {
 
       <div className="bg-white py-5">
         <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row w-full">
-          <div className="flex pl-5 lg:pl-10 content-center justify-center w-full">
+          <div className="flex px-5 lg:pl-10 content-center justify-center w-full">
             <div className="relative">
               <Image
                 src="/images/events.png"
@@ -197,8 +197,8 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="pl-2.5 pr-5 lg:pl-5 lg:pr-10 w-full ">
-            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between">
+          <div className="px-5 lg:pl-5 lg:pr-10 w-full">
+            <div className="mt-5 lg:mt-0 lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between">
               <div className="flex justify-between w-full">
                 <p className="subheading">Upcoming Events</p>
                 <Link href="https://bowlsnewzealand.co.nz/events/">
@@ -208,17 +208,16 @@ export default function Home() {
                   />
                 </Link>
               </div>
-              <div className="flex items-start md:flex-col gap-4 text-brown w-full">
+              <div className="flex items-start flex-col gap-4 text-brown w-full">
                 {events.map((event, index) => (
                   <div
                     key={index}
-                    className="w-full border-[1.5px] flex border-brown rounded-lg"
+                    className="w-full overflow-hidden border-[1.5px] flex flex-col border-brown rounded-lg lg:flex-row"
                   >
-                    <div className="w-28 p-4 flex flex-col justify-center items-start gap-1">
+                    <div className="lg:w-28 p-4 flex flex-col justify-center items-start gap-1 bg-brown text-white lg:bg-transparent lg:text-brown w-full border-r-[1.5px] border-brown">
                       <p className="label">{event.month}</p>
                       <p className="paragraph-lg">{event.date}</p>
                     </div>
-                    <div className="bg-brown md:w-[1.5px] h-[1.5px] w-full md:h-full" />
                     <div className="p-4 flex flex-col justify-center items-start gap-1">
                       <p className="label">{event.place}</p>
                       <p className="paragraph-lg lg:truncate">{event.name}</p>
@@ -233,8 +232,8 @@ export default function Home() {
 
       {/* Shop */}
       <div className="bg-white py-[60px] border-b-[1.5px] border-brown/30">
-        <div className="mx-auto max-w-[1440px] flex flex-col  w-full gap-20 px-10 text-brown">
-          <div className="w-full flex gap-10 items-start">
+        <div className="mx-auto max-w-[1440px] flex flex-col  w-full gap-20 px-5 lg:px-10 text-brown">
+          <div className="w-full flex flex-col md:flex-row gap-10 items-start">
             <div className="space-y-2.5 w-full">
               <p className="subheading">Shop Our Collection</p>
               <p className="paragraph-base">
@@ -273,8 +272,8 @@ export default function Home() {
       {/* Bowls TV */}
       <div className="bg-white py-5">
         <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row w-full">
-          <div className="pl-5 lg:pl-10 w-full">
-            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between">
+          <div className="px-5 lg:pl-10 w-full">
+            <div className="lg:p-10 p-5 flex bg-cream h-full flex-col gap-5 lg:justify-between mb-5 lg:mb-0">
               <div className="flex justify-between items-start">
                 <p className="subheading">Latest from Bowls TV</p>
               </div>
@@ -294,7 +293,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="pl-2.5 lg:pl-5 pr-5 lg:pr-10 w-full h-f">
+          <div className="lg:pl-5 px-5 lg:pr-10 w-full h-full">
             <div className="aspect-video w-full">
               <iframe
                 src="https://www.youtube.com/embed?listType=user_uploads&list=bowlsnewzealand&index=0"

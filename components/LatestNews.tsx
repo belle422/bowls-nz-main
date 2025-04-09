@@ -49,7 +49,7 @@ export default function NewsCarousel() {
   return (
     <div className="bg-white py-5">
       <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row w-full">
-        <div className="flex pl-5 lg:pl-10 content-center justify-center w-full">
+        <div className="flex px-5 lg:pl-10 content-center justify-center w-full">
           <div className="relative">
             <Image
               src={article.image}
@@ -61,7 +61,7 @@ export default function NewsCarousel() {
             />
           </div>
         </div>
-        <div className="pl-2.5 pr-5 lg:pl-5 lg:pr-10 w-full ">
+        <div className="px-5 lg:pl-5 lg:pr-10 w-full">
           <div className="lg:p-10 p-5 flex flex-col gap-5 lg:gap-20">
             <div className="flex justify-between w-full">
               <p className="subheading">Latest News</p>

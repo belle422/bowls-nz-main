@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 
 export default function Navbar() {
+  const currentYear = new Date().getFullYear();
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -113,7 +115,11 @@ export default function Navbar() {
             </button>
             <Link
               href="/watch/livestreams"
-              className={scrolled ? "text-black" : "text-white"}
+              className={
+                scrolled
+                  ? "hidden md:block text-black"
+                  : "hidden md:block text-white"
+              }
             >
               <MonitorPlay
                 strokeWidth={1}
@@ -139,7 +145,11 @@ export default function Navbar() {
             <Link
               href="https://shop.bowlsnewzealand.co.nz"
               target="_blank"
-              className={scrolled ? "text-black" : "text-white"}
+              className={
+                scrolled
+                  ? "hidden md:block text-black"
+                  : "hidden md:block text-white"
+              }
             >
               <ShoppingCart
                 strokeWidth={1}
@@ -149,11 +159,15 @@ export default function Navbar() {
             <Link
               href="https://www.bowlshub.co.nz/authenticate/login"
               target="_blank"
-              className={scrolled ? "text-black" : "text-white"}
+              className={
+                scrolled
+                  ? "hidden md:block text-black"
+                  : "hidden md:block text-white"
+              }
             >
               <CircleUserRound
                 strokeWidth={1}
-                className="h-10 w-10 lg:h-7 lg:w-7"
+                className="h-10 w-10 lg:w-7 lg:h-7"
               />
             </Link>
           </div>
@@ -229,7 +243,7 @@ export default function Navbar() {
                 The national governing body for lawn bowls in Aotearoa New
                 Zealand, promoting and developing the sport at all levels.
               </p>
-              <p>© 2025 Bowls New Zealand. All rights reserved.</p>
+              <p>© {currentYear} Bowls New Zealand. All rights reserved.</p>
             </div>
           </div>
         </div>
