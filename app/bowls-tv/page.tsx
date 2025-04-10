@@ -278,7 +278,7 @@ export default function BowlsTVPage() {
                   )}
                 </div>
                 <div className="px-2.5 py-5 w-full flex flex-col gap-5 h-full">
-                  <div className="space-y-2.5">
+                  <div className="flex flex-col gap-2.5 h-full">
                     <p className="paragraph-lg">{channel.description}</p>
                     <div className="flex gap-1">
                       <p className="truncate paragraph-xs  text-brown/80 italic">
