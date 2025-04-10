@@ -42,10 +42,9 @@ export default function Navbar() {
     {
       title: "Watch",
       children: [
-        { title: "Bowls TV", href: "/watch/bowls-tv" },
-        { title: "Bowls TV Channels", href: "/watch/channels" },
-        { title: "Livestreams", href: "/watch/livestreams" },
-        { title: "Match Replays", href: "/watch/match-replays" },
+        { title: "Bowls TV", href: "/bowls-tv" },
+        { title: "Livestreams", href: "/bowls-tv/livestreams" },
+        { title: "Match Replays", href: "/bowls-tv/match-replays" },
       ],
     },
     {
@@ -114,7 +113,7 @@ export default function Navbar() {
               <Menu strokeWidth={1} className="h-10 w-10 lg:h-7 lg:w-7" />
             </button>
             <Link
-              href="/watch/livestreams"
+              href="/bowls-tv"
               className={
                 scrolled
                   ? "hidden md:block text-black"
@@ -181,7 +180,7 @@ export default function Navbar() {
                 <button onClick={() => setIsOpen(false)} className="text-brown">
                   <X strokeWidth={1} className="h-10 w-10" />
                 </button>
-                <Link href="/watch/livestreams">
+                <Link href="/bowls-tv">
                   <MonitorPlay
                     strokeWidth={1}
                     className=" text-brown h-10 w-10"
