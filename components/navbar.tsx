@@ -10,6 +10,7 @@ import {
   ShoppingCart,
   CircleUserRound,
 } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const currentYear = new Date().getFullYear();
@@ -26,23 +27,29 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
+  type navItem = {
+    title: string;
+    children: { title: string; href?: string; target?: "_blank" | "_self" }[];
+  };
+
+  const navItems: navItem[] = [
     {
       title: "Play Bowls",
       children: [
-        { title: "How to Play", href: "/play-bowls/how-to-play" },
-        { title: "Find a Club", href: "/play-bowls/find-a-club" },
-        { title: "Twilight Bowls", href: "/play-bowls/twilight-bowls" },
+        { title: "How to Play" },
+        { title: "Find a Club" },
+        { title: "Twilight Bowls" },
         {
           title: "Join a Competition",
           href: "https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers",
+          target: "_blank",
         },
       ],
     },
     {
       title: "Watch",
       children: [
-        { title: "Bowls TV", href: "/bowls-tv" },
+        { title: "Bowls TV", href: "/bowls-tv", target: "_self" },
         { title: "Livestreams", href: "/bowls-tv/livestreams" },
         { title: "Match Replays", href: "/bowls-tv/match-replays" },
       ],
@@ -50,21 +57,20 @@ export default function Navbar() {
     {
       title: "Community",
       children: [
-        { title: "Volunteers", href: "/community/volunteers" },
-        { title: "Become a Coach", href: "/community/become-a-coach" },
-        { title: "Stories from the Green", href: "/community/stories" },
+        { title: "Volunteers" },
+        { title: "Become a Coach" },
+        { title: "Stories from the Green" },
         {
           title: "Inclusion & Diversity",
-          href: "/community/inclusion-diversity",
         },
       ],
     },
     {
       title: "About",
       children: [
-        { title: "About Bowls NZ", href: "/about/about-us" },
-        { title: "News & Updates", href: "/about/news" },
-        { title: "Contact Us", href: "/about/contact" },
+        { title: "About Bowls NZ" },
+        { title: "News & Updates" },
+        { title: "Contact Us" },
       ],
     },
     {
@@ -73,12 +79,14 @@ export default function Navbar() {
         {
           title: "Results",
           href: "https://results.bowlshub.co.nz/club-group/CLUB_GROUP_ROOT#competitions",
+          target: "_blank",
         },
         {
           title: "Rankings",
           href: "https://bowlsnewzealand.co.nz/bowls-plus/",
+          target: "_blank",
         },
-        { title: "Quick Results", href: "/results-rankings/quick-results" },
+        { title: "Quick Results" },
       ],
     },
     {
@@ -87,12 +95,14 @@ export default function Navbar() {
         {
           title: "Events Calendar",
           href: "https://bowlsnewzealand.co.nz/events/",
+          target: "_blank",
         },
         {
           title: "Enter a Competition",
           href: "https://www.bowlshub.co.nz/authenticate/login?redirect=%2Fmembership%2Fmembers",
+          target: "_blank",
         },
-        { title: "Past Events", href: "/events/past-events" },
+        { title: "Past Events" },
       ],
     },
   ];
@@ -114,16 +124,19 @@ export default function Navbar() {
             </button>
             <Link
               href="/bowls-tv"
-              className={
-                scrolled
-                  ? "hidden md:block text-black"
-                  : "hidden md:block text-white"
-              }
+              className={scrolled ? "hidden md:flex" : "hidden md:flex"}
             >
-              <MonitorPlay
-                strokeWidth={1}
-                className="h-10 w-10 lg:h-7 lg:w-7"
-              />
+              <Button
+                variant="outline"
+                size="sm"
+                className={
+                  scrolled
+                    ? "text-black border-black"
+                    : "text-white border-white"
+                }
+              >
+                Bowls TV
+              </Button>
             </Link>
           </div>
           {/* Logo */}
@@ -144,16 +157,19 @@ export default function Navbar() {
             <Link
               href="https://shop.bowlsnewzealand.co.nz"
               target="_blank"
-              className={
-                scrolled
-                  ? "hidden md:block text-black"
-                  : "hidden md:block text-white"
-              }
+              className={scrolled ? "hidden md:block" : "hidden md:block"}
             >
-              <ShoppingCart
-                strokeWidth={1}
-                className="h-10 w-10 lg:w-7 lg:h-7"
-              />
+              <Button
+                variant="outline"
+                size="sm"
+                className={
+                  scrolled
+                    ? "text-black border-black"
+                    : "text-white border-white"
+                }
+              >
+                Shop
+              </Button>
             </Link>
             <Link
               href="https://www.bowlshub.co.nz/authenticate/login"
@@ -183,8 +199,15 @@ export default function Navbar() {
                 <Link href="/bowls-tv">
                   <MonitorPlay
                     strokeWidth={1}
-                    className=" text-brown h-10 w-10"
+                    className=" text-brown h-10 w-10 md:hidden"
                   />
+                  <Button
+                    className="hidden md:flex border-black text-black"
+                    variant="outline"
+                    size="sm"
+                  >
+                    Bowls TV
+                  </Button>
                 </Link>
               </div>
               <Link href="/">
@@ -200,8 +223,15 @@ export default function Navbar() {
                 <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
                   <ShoppingCart
                     strokeWidth={1}
-                    className=" text-brown h-10 w-10"
+                    className=" text-brown h-10 w-10 md:hidden"
                   />
+                  <Button
+                    className="hidden md:flex border-black text-black"
+                    variant="outline"
+                    size="sm"
+                  >
+                    Shop
+                  </Button>
                 </Link>
                 <Link
                   href="https://www.bowlshub.co.nz/authenticate/login"
@@ -224,13 +254,27 @@ export default function Navbar() {
                   <ul className="lg:space-y-1 w-full">
                     {section.children.map((item) => (
                       <li key={item.title}>
-                        <Link
+                        {item.href ? (
+                          <Link
+                            href={item.href}
+                            target={item.target}
+                            onClick={() => setIsOpen(false)}
+                            className="paragraph-base hover:underline leading-none"
+                          >
+                            {item.title}
+                          </Link>
+                        ) : (
+                          <p className="paragraph-base opacity-50 leading-none">
+                            {item.title}
+                          </p>
+                        )}
+                        {/* <Link
                           href={item.href}
                           onClick={() => setIsOpen(false)}
                           className="paragraph-base hover:text-black leading-none"
                         >
                           {item.title}
-                        </Link>
+                        </Link> */}
                       </li>
                     ))}
                   </ul>

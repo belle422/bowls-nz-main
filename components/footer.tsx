@@ -22,8 +22,12 @@ export default function Footer() {
 
   const quickLinks: QuickLink[] = [
     {
-      title: "Log In / Sign Up",
+      title: "Sign Up",
       href: "https://www.bowlshub.co.nz/authenticate/login",
+    },
+    {
+      title: "Log In",
+      href: "https://v0-lawn-bowls-prototype-rap3jt.vercel.app/my-overview",
     },
     {
       title: "Shop",

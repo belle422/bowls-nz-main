@@ -1,5 +1,5 @@
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function BowlsPlusPage() {
   return (
@@ -20,8 +20,9 @@ export default function BowlsPlusPage() {
 
           <div className="prose max-w-none">
             <p className="text-lg">
-              Bowls+ is Bowls New Zealand's official ranking, grading and points system. Track your progress and see
-              where you stand among other players across the country.
+              Bowls+ is Bowls New Zealand's official ranking, grading and points
+              system. Track your progress and see where you stand among other
+              players across the country.
             </p>
 
             <div className="mt-6">
@@ -40,6 +41,5 @@ export default function BowlsPlusPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
-
