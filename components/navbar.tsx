@@ -268,20 +268,13 @@ export default function Navbar() {
                             {item.title}
                           </p>
                         )}
-                        {/* <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="paragraph-base hover:text-black leading-none"
-                        >
-                          {item.title}
-                        </Link> */}
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-between paragraph-xs">
+            <div className="flex items-center justify-between paragraph-xs md:paragraph-sm">
               <p>
                 The national governing body for lawn bowls in Aotearoa New
                 Zealand, promoting and developing the sport at all levels.

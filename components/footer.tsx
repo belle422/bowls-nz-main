@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -23,7 +31,7 @@ export default function Footer() {
   const quickLinks: QuickLink[] = [
     {
       title: "Sign Up",
-      href: "https://www.bowlshub.co.nz/authenticate/login",
+      href: "https://www.bowlshub.co.nz/signup/",
     },
     {
       title: "Log In",
@@ -104,6 +112,33 @@ export default function Footer() {
                   href="mailto:info@bowlsnewzealand.co.nz"
                 >
                   info@bowlsnewzealand.co.nz
+                </Link>
+              </div>
+              <div className="flex gap-2.5 mt-2.5">
+                <div className="w-3.5 h-3.5" />
+                <Link
+                  href="https://www.facebook.com/BowlsNewZealand"
+                  target="_blank"
+                >
+                  <Facebook className="h-5 w-5 text-white" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/bowlsnewzealand/?hl=en"
+                  target="_blank"
+                >
+                  <Instagram className="h-5 w-5 text-white" />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@bowlsnewzealand"
+                  target="_blank"
+                >
+                  <Youtube className="h-5 w-5 text-white" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/bowls-new-zealand/?originalSubdomain=nz"
+                  target="_blank"
+                >
+                  <Linkedin className="h-5 w-5 text-white" />
                 </Link>
               </div>
             </div>

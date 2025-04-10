@@ -1,16 +1,8 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { PlayCircle, Trophy, BookCopy, Handshake } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 import { Button } from "./ui/button";
 
 export default function FindYourPath() {
-  const router = useRouter();
-
   const userJourneys = [
     {
       icon: PlayCircle,
@@ -18,7 +10,6 @@ export default function FindYourPath() {
       description:
         "Find a club, learn the basics, or join a competition. Get started with lawn bowls today.",
       CTA: "Start Playing",
-      href: "/play-bowls/how-to-play",
     },
     {
       icon: Trophy,
@@ -26,7 +17,6 @@ export default function FindYourPath() {
       description:
         "Find tournaments, rankings, & competitive opportunities to level up your game.",
       CTA: "Find Competitions",
-      href: "/events",
     },
     {
       icon: BookCopy,
@@ -34,7 +24,6 @@ export default function FindYourPath() {
       description:
         "Develop your coaching skills and help others improve their game with coaching resources.",
       CTA: "Coaching Resources",
-      href: "/community/become-a-coach",
     },
     {
       icon: Handshake,
@@ -42,7 +31,6 @@ export default function FindYourPath() {
       description:
         "Give back to the sport by volunteering. Find opportunities to help at clubs and events.",
       CTA: "Volunteer Opportunities",
-      href: "/community/volunteers",
     },
   ];
 
@@ -72,11 +60,9 @@ export default function FindYourPath() {
                 <h4 className="uppercase">{userJourney.title}</h4>
                 <p className="paragraph-sm">{userJourney.description}</p>
               </div>
-              <Link href={userJourney.href}>
-                <Button className="w-full" variant="secondary">
-                  {userJourney.CTA}
-                </Button>
-              </Link>
+              <Button className="w-full" variant="secondary">
+                {userJourney.CTA}
+              </Button>
             </div>
           ))}
         </div>

@@ -12,6 +12,7 @@ import PartnerCarousel from "@/components/PartnerCarousel";
 import LatestNews from "@/components/LatestNews";
 import FindYourPath from "@/components/FindYourPath";
 import CommercialPartnerCarousel from "@/components/CommercialPartnerCarousel";
+import LinkBanner from "@/components/LinkBanner";
 
 export default function Home() {
   const router = useRouter();
@@ -135,7 +136,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      {/* Link Banner */}
+      <LinkBanner />
       {/* Logo Carousel */}
       <div className="py-10 bg-white flex flex-col gap-5 items-center border-b border-brown/30">
         <p className="subheading text-brown">Commercial Partners</p>
@@ -196,8 +198,11 @@ export default function Home() {
                 <Link href="https://bowlsnewzealand.co.nz/events/">
                   <CalendarDays
                     strokeWidth={1}
-                    className="text-brown h-10 w-10"
+                    className="text-brown h-10 w-10 md:hidden"
                   />
+                  <Button variant="secondary" className="hidden md:flex">
+                    Events Calendar
+                  </Button>
                 </Link>
               </div>
               <div className="flex items-start flex-col gap-4 text-brown w-full">
