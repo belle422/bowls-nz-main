@@ -18,10 +18,10 @@ export default function LinkBanner() {
   ];
 
   return (
-    <div className="bg-cream border-b-[1.5px] border-brown text-brown">
-      <div className="mx-auto max-w-[1440px] md:divide-x-[1.5px] divide-x-0 divide-y-[1.5px] divide-brown w-full grid md:grid-cols-4">
+    <div className="bg-cream border-b-[1.5px] border-brown text-brown md:max-h-[104px] h-full">
+      <div className="h-full mx-auto max-w-[1440px] md:divide-x-[1.5px] divide-x-0 divide-y-[1.5px] md:divide-y-0 divide-brown w-full grid md:grid-cols-4">
         {ctaLinks.map((link, index) => (
-          <div key={index}>
+          <div key={index} className="h-full">
             {link.href ? (
               <Link href={link.href} target="_blank ">
                 <div className="flex items-start justify-between p-5 lg:p-10">
