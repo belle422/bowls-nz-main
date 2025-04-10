@@ -3,8 +3,25 @@ import { Inter, Volkhov } from "next/font/google";
 import "/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Bowls New Zealand",
-  description: "Promoting and developing bowls at all levels.",
+  title: "Bowls New Zealand | Promoting & Developing Bowls at All levels",
+  description:
+    "Discover the world of lawn bowls in New Zealand. Find clubs, watch live matches, and learn how to play with Bowls New Zealand.",
+  openGraph: {
+    title: "Bowls New Zealand | Promoting & Developing Bowls at All levels",
+    description:
+      "Discover the world of lawn bowls in New Zealand. Find clubs, watch live matches, and learn how to play with Bowls New Zealand.",
+    url: "https://bowls-nz-main.vercel.app",
+    siteName: "Bowls New Zealand",
+    images: [
+      {
+        url: "https://bowls-nz-main.vercel.app/images/open-graph-img_home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Close up of lawn bowls with Bowls New Zealand logo overlay",
+      },
+    ],
+    type: "website",
+  },
 };
 
 const inter = Inter({ subsets: ["latin"] });

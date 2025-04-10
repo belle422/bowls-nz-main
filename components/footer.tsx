@@ -15,26 +15,28 @@ export default function Footer() {
     console.log("Newsletter subscription attempted");
   };
 
-  const quickLinks = [
+  type QuickLink = {
+    title: string;
+    href?: string;
+  };
+
+  const quickLinks: QuickLink[] = [
     {
       title: "Log In / Sign Up",
       href: "https://www.bowlshub.co.nz/authenticate/login",
     },
     {
       title: "Shop",
-      href: "https://shop.bowlsnewzealand.co.nz",
+      href: "https://shop.bowlsnewzealand.co.nzhttps://shop.bowlsnewzealand.co.nz/?_gl=1*ksmikx*_ga*MTkxNDE2MDE3OC4xNzQzNjMxNjI5*_ga_D9S0MEXCWG*MTc0NDI1NDMxMi44LjEuMTc0NDI1NDUxOC4wLjAuMA.",
     },
     {
       title: "Find a Club",
-      href: "/play-bowls/find-a-club",
     },
     {
       title: "Prviacy & Terms",
-      href: "/privacy-terms",
     },
     {
       title: "Admin Portal",
-      href: "/admin",
     },
   ];
 
@@ -60,18 +62,22 @@ export default function Footer() {
               />
             </Link>
             <div className="flex flex-col gap-2.5">
-              {quickLinks.map((quickLink, index) => (
-                <Link key={index} href={quickLink.href}>
-                  <p className="paragraph-sm">{quickLink.title}</p>
-                </Link>
+              {quickLinks.map((link, index) => (
+                <div key={index}>
+                  {link.href ? (
+                    <Link href={link.href} className="hover:underline">
+                      <p className="paragraph-sm">{link.title}</p>
+                    </Link>
+                  ) : (
+                    <p className="paragraph-sm text-white/70">{link.title}</p>
+                  )}
+                </div>
               ))}
             </div>
           </div>
           <div className="flex flex-col gap-5 md:gap-10 paragraph-sm w-full lg:col-span-3">
             <div className="md:h-20">
-              <Link href="/contact">
-                <h6 className="footer-title">Contact</h6>
-              </Link>
+              <h6 className="footer-title">Contact</h6>
             </div>
             <div className="flex flex-col gap-2.5 w-full">
               <div className="flex gap-2.5 items-start ">
@@ -83,14 +89,14 @@ export default function Footer() {
               </div>
               <div className="flex gap-2.5 items-start">
                 <Phone strokeWidth={1.5} className="text-white h-3.5 w-3.5" />
-                <Link className="underline" href="tel:+6495975853">
+                <Link className="hover:underline" href="tel:+6495975853">
                   +64 (09) 597 5853
                 </Link>
               </div>
               <div className="flex gap-2.5 items-start">
                 <Mail strokeWidth={1.5} className="text-white h-3.5 w-3.5" />
                 <Link
-                  className="underline"
+                  className="hover:underline"
                   href="mailto:info@bowlsnewzealand.co.nz"
                 >
                   info@bowlsnewzealand.co.nz

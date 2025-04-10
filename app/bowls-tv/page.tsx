@@ -12,10 +12,10 @@ export default function BowlsTVPage() {
   // Actual YouTube channel links and latest video IDs
   const channels = [
     {
-      name: "International",
+      name: "International Events",
       description: "International lawn bowls competitions and tournaments",
       youtubeUrl:
-        "https://www.youtube.com/playlist?list=PLfRKPuEJMqdmIxpMpfXGIwt-xHOLT1gSd",
+        "https://www.youtube.com/playlist?list=PLYnd702kGBmn4kYldr7aqmjza2lKAXTt5",
       videoId: "h5NxPQ8PJlw", // Actual video ID from the embed code
       latestVideo: "2024 | World Champion of Champion Singles | Day Four",
     },
@@ -23,7 +23,7 @@ export default function BowlsTVPage() {
       name: "Summerset Nationals",
       description: "Coverage of the Summerset National Championships",
       youtubeUrl:
-        "https://www.youtube.com/playlist?list=PLfRKPuEJMqdmIxpMpfXGIwt-xHOLT1gSd",
+        "https://www.youtube.com/playlist?list=PLYnd702kGBmkjC5RGPbPM8ckRajEi17BM",
       videoId: "QFEt2heEYJE", // Actual video ID
       latestVideo: "2025 | Summerset National Singles & Pairs | Finals Day",
     },
@@ -142,14 +142,25 @@ export default function BowlsTVPage() {
     <div className="flex min-h-screen flex-col bg-brown overflow-x-hidden">
       <Navbar />
       {/* Hero Section */}
-      <div className="mx-auto max-w-[1440px] w-full px-5 lg:px-10 pt-40 pb-20 flex flex-col text-white">
-        <div className="flex flex-col gap-5 ">
-          <h1>Bowls TV</h1>
-          <p className="paragraph-lg">
-            Bowls New Zealand's offers a variety of channels covering national
-            and international lawn bowls events, as well as coaching content and
-            tutorials. Explore our YouTube content below.
-          </p>
+      <div className="overflow-hidden w-full h-[354px] relative">
+        <div className="absolute inset-0 z-0 ">
+          <Image
+            src="/images/bowls-tv-bg.png"
+            alt="Lawn bowls on a green with black bowls and white jack"
+            className="object-cover opacity-60"
+            fill
+            priority
+          />
+        </div>
+        <div className="mx-auto max-w-[1440px] w-full px-5 lg:px-10 pt-40 pb-20 flex flex-col text-white">
+          <div className="flex flex-col gap-5 z-10">
+            <h1>Bowls TV</h1>
+            <p className="paragraph-lg">
+              Bowls New Zealand's offers a variety of channels covering national
+              and international lawn bowls events, as well as coaching content
+              and tutorials. Explore our YouTube content below.
+            </p>
+          </div>
         </div>
       </div>
       {/* Featured Video */}
@@ -203,7 +214,7 @@ export default function BowlsTVPage() {
               >
                 <div className="px-2.5 py-5 border-b-[1.5px] w-full border-brown flex justify-between items-start">
                   <p className="paragraph-lg uppercase">{channel.name}</p>
-                  <Link href={channel.youtubeUrl}>
+                  <Link href={channel.youtubeUrl} target="_blank">
                     <ExternalLink
                       strokeWidth={1.5}
                       className="h-6 w-6 text-brown"

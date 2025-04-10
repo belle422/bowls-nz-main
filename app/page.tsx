@@ -233,7 +233,10 @@ export default function Home() {
                 $20 or more!
               </p>
             </div>
-            <Link href="https://shop.bowlsnewzealand.co.nz" target="_blank">
+            <Link
+              href="https://shop.bowlsnewzealand.co.nz/?_gl=1*ksmikx*_ga*MTkxNDE2MDE3OC4xNzQzNjMxNjI5*_ga_D9S0MEXCWG*MTc0NDI1NDMxMi44LjEuMTc0NDI1NDUxOC4wLjAuMA"
+              target="_blank"
+            >
               <Button variant="secondary">View Full Collection</Button>
             </Link>
           </div>
